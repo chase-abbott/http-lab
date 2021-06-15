@@ -25,4 +25,34 @@ describe('app routes', () => {
     </body>
     </html>`);
   });
+  it('sends html with an h1 with thhe word green', async() => {
+    const res = await request(app).get('/green');
+    expect(res.text).toEqual(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> green </h1>
+</body>
+</html>`);
+  });
+  it('sends html with an h1 with the word blue', async() => {
+    const res = await request(app).get('/blue');
+    expect(res.text).toEqual(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> blue </h1>
+</body>
+</html>`);
+  });
 });
