@@ -58,7 +58,7 @@ describe('app routes', () => {
   it('sends html from the index.html file of this project', async() => {
     const res = await request(app).get('/index.html');
     
-    
+    expect(res.status).toBe(200);
     expect(res.text).toEqual('<!DOCTYPE html>\r\n' +
     '<html lang="en">\r\n' +
     '\r\n' +
