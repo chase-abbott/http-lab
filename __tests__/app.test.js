@@ -55,4 +55,24 @@ describe('app routes', () => {
 </body>
 </html>`);
   });
+  it('sends html from the index.html file of this project', async() => {
+    const res = await request(app).get('/index.html');
+    
+    
+    expect(res.text).toEqual('<!DOCTYPE html>\r\n' +
+    '<html lang="en">\r\n' +
+    '\r\n' +
+    '<head>\r\n' +
+    '  <meta charset="UTF-8">\r\n' +
+    '  <meta http-equiv="X-UA-Compatible" content="IE=edge">\r\n' +
+    '  <meta name="viewport" content="width=device-width, initial-scale=1.0">\r\n' +
+    '  <title>Document</title>\r\n' +
+    '</head>\r\n' +
+    '\r\n' +
+    '<body>\r\n' +
+    '  <h1> red </h1>\r\n' +
+    '</body>\r\n' +
+    '\r\n' +
+    '</html>');
+  });
 });

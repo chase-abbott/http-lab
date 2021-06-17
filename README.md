@@ -1,0 +1,1 @@
+## If a user hits my server at the end point /index.html, I want to send them the index.html from this project
